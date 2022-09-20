@@ -1,0 +1,16 @@
+server:
+  port: 8790
+swagger:
+  enable: true
+logging:
+  level:
+    root: info
+    com.example.emos.wx.wx.dao: warn
+  pattern:
+    console: "%d{yyyy/MM/dd HH:mm:ss}  %-5level  %msg%n"
+spring:
+  resources:
+      static-locations:
+        classpath:/static
+  thymeleaf:
+    cache: false
