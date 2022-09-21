@@ -30,26 +30,9 @@ import java.util.Map;
  */
 @SessionAttributes("pageTemplates")
 @Controller
-public class SstiController {
+public class FreemarkerController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(SstiController.class);
-
-    /**
-     * SSTI of Java velocity. The latest Velocity version still has this problem.
-     * Fix method: Avoid to use Velocity.evaluate method.
-     * http://localhost:8790/ssti/velocityVuln?payload=%23set($e=%22e%22);$e.getClass().forName(%22java.lang.Runtime%22).getMethod(%22getRuntime%22,null).invoke(null,null).exec(%22open%20-a%20Calculator%22)
-     * @param payload
-     */
-    @GetMapping("velocityVuln")
-    public void velocityVuln(String payload) {
-        Velocity.init();
-        VelocityContext context = new VelocityContext();
-        context.put("author", "ha0l");
-        context.put("address", "Beijing");
-        context.put("tel", "13000000000");
-        StringWriter writer = new StringWriter();
-        Velocity.evaluate(context, writer, "vuln", payload);
-    }
+    private static final Logger LOGGER = LoggerFactory.getLogger(VelocityController.class);
 
     @RequestMapping(value = { "/", "/welcome" }, method = RequestMethod.GET)
     public ModelAndView welcomePage() {
@@ -172,3 +155,4 @@ public class SstiController {
     }
 
 }
+
