@@ -79,6 +79,11 @@
             <groupId>nz.net.ultraq.thymeleaf</groupId>
             <artifactId>thymeleaf-layout-dialect</artifactId>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.pebbletemplates</groupId>-->
+<!--            <artifactId>pebble-spring-boot-starter</artifactId>-->
+<!--            <version>3.0.5</version>-->
+<!--        </dependency>-->
     </dependencies>
 
     <build>

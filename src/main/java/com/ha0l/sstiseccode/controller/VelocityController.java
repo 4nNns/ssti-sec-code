@@ -17,10 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,5 +47,25 @@ public class VelocityController {
         StringWriter writer = new StringWriter();
         Velocity.evaluate(context, writer, "vuln", payload);
     }
+
+//    @GetMapping("pebbleVuln")
+//    public String pebbleVuln(String payload) {
+//        PebbleEngine engine = new PebbleEngine.Builder().build();
+//        PebbleTemplate compiledTemplate = engine.getTemplate("templates/home.html");
+//        Writer writer = new StringWriter();
+//
+//        Map<String, Object> context = new HashMap<>();
+//        context.put("websiteTitle", "My First Website");
+//        context.put("content", payload);
+//
+//        try {
+//            compiledTemplate.evaluate(writer, context);
+//        } catch (IOException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }
+//        String output = writer.toString();
+//        return output;
+//    }
 
 }

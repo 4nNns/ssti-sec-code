@@ -32,7 +32,7 @@ import java.util.Map;
 @Controller
 public class FreemarkerController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(VelocityController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(FreemarkerController.class);
 
     @RequestMapping(value = { "/", "/welcome" }, method = RequestMethod.GET)
     public ModelAndView welcomePage() {

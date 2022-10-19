@@ -1,8 +1,11 @@
 package com.ha0l.sstiseccode;
 
+import com.ha0l.sstiseccode.controller.VelocityController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,13 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @SpringBootApplication
-@ComponentScan(basePackageClasses = SstiSecCodeApplication.class)
+//@ComponentScan(value = com.ha0l.sstiseccode.controller.VelocityController)
+@ComponentScan(value = {"com.ha0l.sstiseccode.controller"})
 public class SstiSecCodeApplication {
 
-//    @GetMapping("/")
-//    public String base() {
-//        return "System is Running!";
-//    }
 
     public static void main(String[] args) {
         SpringApplication.run(SstiSecCodeApplication.class, args);
